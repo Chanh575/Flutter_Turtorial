@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
+        appBar: AppBar(
+          title: const Text('App test'),
+        ),
         body: Center(
             child: Text(
           "Hello $name, $age tuổi",
