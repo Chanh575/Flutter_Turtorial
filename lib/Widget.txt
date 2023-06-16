@@ -1,0 +1,31 @@
+// Text
+  Text(
+    'Hello world!',
+     style: TextStyle(
+        color: Colors.black,
+        fontSize: 40,
+        backgroundColor: Colors.white,
+        fontWeight: FontWeight.bold,
+
+    ),
+  )
+// button 
+  FlatButton(
+    child: Text("Click here"),
+    onPressed: () {
+      // Do something here
+    },
+  )
+  RaisedButton(
+    child: Text("Click here"),
+    elevation: 5.0,
+    onPressed: () {
+      // Do something here
+    },
+  )
+
+// Image
+  new Icon(
+    Icons.add,
+    size: 36.0,
+  )
