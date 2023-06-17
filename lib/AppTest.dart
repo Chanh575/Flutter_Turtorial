@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 // hinh 1
 class AppTest extends StatelessWidget {
   @override
@@ -609,4 +607,147 @@ class AppTest7 extends StatelessWidget {
 }
 
 // hinh 8
-// hinh 9
+class AppTest8 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double desiredHeight = screenHeight * 0.6;
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Demo'),
+            ),
+            body: Stack(
+              children: [
+                Align(
+                    alignment: Alignment(0.45, -0.95),
+                    child: Container(
+                        height: 25,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(width: 1, color: Colors.green),
+                        ))),
+                Align(
+                  alignment: Alignment(0, -0.4),
+                  child: Container(
+                    height: 130,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(width: 1, color: Colors.green),
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 10),
+                                height: 50,
+                                width: 50,
+                                color: Colors.red,
+                              ),
+                              Transform.translate(
+                                offset: const Offset(0, 50 * (-0.7)),
+                                child: Container(
+                                  margin: const EdgeInsets.only(right: 10),
+                                  height: 50,
+                                  width: 50,
+                                  color: Colors.blue,
+                                ),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(right: 10),
+                                height: 50,
+                                width: 50,
+                                color: Colors.yellow,
+                              )
+                            ],
+                          )
+                        ]),
+                  ),
+                )
+              ],
+            )));
+  }
+}
+
+// hinh 9 (Con hinh tam giac)
+class AppTest9 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Demo'),
+        ),
+        body: Center(
+          child: Container(
+              height: 150,
+              width: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.green,
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 40),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          color: const Color.fromARGB(255, 11, 35, 77),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          child: ClipPath(
+                              clipper: TriangleClipper(),
+                              child: Container(
+                                width: 81,
+                                height: 81,
+                                color: Colors.white,
+                              )),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              )),
+        ),
+      ),
+    );
+  }
+}
+
+class TriangleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.moveTo(0, size.height); // Điểm góc dưới bên trái
+    path.lineTo(size.width, size.height); // Điểm góc dưới bên phải
+    path.lineTo(size.width, 0); // Điểm góc trên bên phải
+    path.close(); // Kết thúc hình tam giác
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
+}

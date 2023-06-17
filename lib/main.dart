@@ -10,5 +10,5 @@ import 'package:flutter_hello/TabBar.dart';
 
 void main() {
   // runApp(MyApp(name: 'Nguyễn Văn Chánh', age: 23));
-  runApp(AppTest7());
+  runApp(AppTest8());
 }
