@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Layout extends StatelessWidget {
+  const Layout({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -10,13 +12,13 @@ class Layout extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

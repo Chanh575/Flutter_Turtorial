@@ -1,6 +1,9 @@
+// Test StatefulWidget
 import 'package:flutter/material.dart';
 
 class MyApp2 extends StatelessWidget {
+  const MyApp2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,12 +13,12 @@ class MyApp2 extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: MyHomePage());
+        home: const MyHomePage());
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   MyAppState createState() => MyAppState();
@@ -25,10 +28,11 @@ class MyAppState extends State<MyHomePage> {
   int _count = 0;
   String _email = '';
   final emailEditingController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('App test fultter'),
+          title: const Text('App test fultter'),
         ),
         drawer: Drawer(
           child: ListView(
@@ -71,15 +75,16 @@ class MyAppState extends State<MyHomePage> {
                   labelText: 'Nhập email của bạn'),
             ),
           ),
-          Text("Email đã nhập:",
+          const Text("Email đã nhập:",
               style: TextStyle(fontSize: 30, color: Colors.black)),
-          Text(_email, style: TextStyle(fontSize: 30, color: Colors.blue)),
+          Text(_email,
+              style: const TextStyle(fontSize: 30, color: Colors.blue)),
           Text("Bạn đã nhấn $_count lần!",
-              style: TextStyle(fontSize: 20, color: Colors.red)),
+              style: const TextStyle(fontSize: 20, color: Colors.red)),
         ]),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() => this._count++);
+            setState(() => _count++);
           },
           tooltip: 'Tăng số đếm',
           child: const Icon(Icons.add),
@@ -133,9 +138,13 @@ class MyAppState extends State<MyHomePage> {
             )),
         persistentFooterButtons: [
           TextButton.icon(
-              icon: Icon(Icons.map), label: Text(""), onPressed: () {}),
+              icon: const Icon(Icons.map),
+              label: const Text(""),
+              onPressed: () {}),
           TextButton.icon(
-              icon: Icon(Icons.view_week), label: Text(""), onPressed: () {}),
+              icon: const Icon(Icons.view_week),
+              label: const Text(""),
+              onPressed: () {}),
         ],
         bottomNavigationBar: BottomAppBar(
           color: Colors.lightGreen[200],
@@ -144,13 +153,13 @@ class MyAppState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               TextButton.icon(
-                icon: Icon(Icons.home),
-                label: Text(""),
+                icon: const Icon(Icons.home),
+                label: const Text(""),
                 onPressed: () {},
               ),
               TextButton.icon(
-                icon: Icon(Icons.email),
-                label: Text(""),
+                icon: const Icon(Icons.email),
+                label: const Text(""),
                 onPressed: () {},
               ),
             ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ButtomAppBar extends StatelessWidget {
+  const ButtomAppBar({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -10,13 +12,13 @@ class ButtomAppBar extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +62,8 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Increment',
-        child: Icon(Icons.add),
         elevation: 2.0,
+        child: const Icon(Icons.add),
       ),
       // floatingActionButton: FloatingActionButton.extended (
       //   elevation: 4.0,
@@ -81,7 +83,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               onPressed: () {},
             ),
           ],

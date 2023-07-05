@@ -1,12 +1,12 @@
+// Test StatelessWidget
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   String name;
   int age;
 
-  MyApp({required this.name, this.age = 0});
+  MyApp({super.key, required this.name, this.age = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         body: Center(
             child: Text(
           "Hello $name, $age tuổi",
-          style: TextStyle(fontSize: 30),
+          style: const TextStyle(fontSize: 30),
           textDirection: TextDirection.ltr,
         )),
       ),

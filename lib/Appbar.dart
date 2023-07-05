@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Appbar extends StatelessWidget {
+  const Appbar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,17 +12,17 @@ class Appbar extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: MyHomePage());
+        home: const MyHomePage());
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   void showAlert(BuildContext context) {
     showDialog(
         context: context,
-        builder: (context) => AlertDialog(
+        builder: (context) => const AlertDialog(
               content: Text("Hi"),
             ));
   }
@@ -98,16 +100,16 @@ class MyHomePage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: const TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_transit)),
                 Tab(icon: Icon(Icons.directions_bike)),
               ],
             ),
-            title: Text('Flutter AppBar Example'),
+            title: const Text('Flutter AppBar Example'),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               Center(child: Text("Car")),
               Center(child: Text("Transit")),
@@ -119,7 +121,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 class MyVolumnButton extends StatefulWidget {
-  MyVolumnButton({Key? key}) : super(key: key);
+  const MyVolumnButton({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -133,16 +135,18 @@ class MyVolumeButtonState extends State<MyVolumnButton> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: volumeOn ? Icon(Icons.volume_up) : Icon(Icons.volume_mute),
+      icon: volumeOn ? const Icon(Icons.volume_up) : const Icon(Icons.volume_mute),
       onPressed: () {
         // Set new State
-        setState(() => this.volumeOn = !this.volumeOn);
+        setState(() => volumeOn = !volumeOn);
       },
     );
   }
 }
 
 class IconTitleWidget extends StatelessWidget {
+  const IconTitleWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Row(

@@ -2,16 +2,24 @@ import 'package:flutter/material.dart';
 
 // hinh 1
 class AppTest extends StatelessWidget {
+  const AppTest({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Demo'),
+            title: const Text('Demo'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           body: Container(
-              padding: EdgeInsets.all(50),
+              padding: const EdgeInsets.all(50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -98,16 +106,24 @@ class AppTest extends StatelessWidget {
 
 // hinh 2
 class AppTest2 extends StatelessWidget {
+  const AppTest2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Demo'),
+            title: const Text('Demo'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           body: Container(
-              padding: EdgeInsets.all(50),
+              padding: const EdgeInsets.all(50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -134,7 +150,7 @@ class AppTest2 extends StatelessWidget {
                         height: 55,
                         color: Colors.red,
                       ),
-                      Container(
+                      SizedBox(
                           width: 80,
                           height: 55,
                           child: ClipOval(
@@ -171,16 +187,24 @@ class AppTest2 extends StatelessWidget {
 
 // hinh 3
 class AppTest3 extends StatelessWidget {
+  const AppTest3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Demo'),
+            title: const Text('Demo'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           body: Container(
-              padding: EdgeInsets.all(50),
+              padding: const EdgeInsets.all(50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -197,7 +221,7 @@ class AppTest3 extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                           width: 80,
                           height: 55,
                           child: ClipOval(
@@ -224,13 +248,21 @@ class AppTest3 extends StatelessWidget {
 
 // hinh 4
 class AppTest4 extends StatelessWidget {
+  const AppTest4({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Demo'),
+              title: const Text('Demo'),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             body: Container(
               padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 10),
@@ -312,16 +344,24 @@ class AppTest4 extends StatelessWidget {
 
 // hinh 5
 class AppTest5 extends StatelessWidget {
+  const AppTest5({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Demo'),
+            title: const Text('Demo'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           body: Center(
-            child: Container(
+            child: SizedBox(
               height: 300,
               width: 300,
               child: Stack(
@@ -332,7 +372,7 @@ class AppTest5 extends StatelessWidget {
                     child: Container(
                       width: 100,
                       height: 100,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.red,
                       ),
@@ -343,7 +383,7 @@ class AppTest5 extends StatelessWidget {
                     child: Container(
                       width: 100,
                       height: 100,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.green,
                       ),
@@ -354,7 +394,7 @@ class AppTest5 extends StatelessWidget {
                     child: Container(
                       width: 100,
                       height: 100,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.yellow,
                       ),
@@ -370,22 +410,29 @@ class AppTest5 extends StatelessWidget {
 
 // hinh 6
 class AppTest6 extends StatelessWidget {
+  const AppTest6({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Demo'),
+              title: const Text('Demo'),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             body: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Stack(
                 children: [
                   Column(
                     children: [
                       Expanded(
-                        flex: 75,
+                        flex: 1,
                         child: Container(
                             color: Colors.grey,
                             child: Column(
@@ -409,19 +456,18 @@ class AppTest6 extends StatelessWidget {
                               ],
                             )),
                       ),
-                      Expanded(
-                        flex: 25,
-                        child: Container(),
-                      ),
                     ],
                   ),
                   Column(
                     children: [
+                      const SizedBox(
+                        height: 30,
+                      ),
                       Container(
-                        margin: EdgeInsets.only(top: 60.0),
+                        margin: const EdgeInsets.only(top: 60.0),
                         height: 90,
                         width: 90,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.yellow,
                         ),
@@ -508,13 +554,21 @@ class AppTest6 extends StatelessWidget {
 
 // hinh 7
 class AppTest7 extends StatelessWidget {
+  const AppTest7({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: '',
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Demo'),
+              title: const Text('Demo'),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             body: Container(
                 child:
@@ -522,7 +576,7 @@ class AppTest7 extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 30.0),
+                    margin: const EdgeInsets.only(top: 30.0),
                     width: 280,
                     height: 120,
                     decoration: BoxDecoration(
@@ -536,7 +590,7 @@ class AppTest7 extends StatelessWidget {
                         Container(
                           height: 100,
                           width: 100,
-                          color: Color.fromARGB(255, 4, 34, 85),
+                          color: const Color.fromARGB(255, 4, 34, 85),
                         ),
                         Container(
                           height: 100,
@@ -563,7 +617,7 @@ class AppTest7 extends StatelessWidget {
                         Container(
                           height: 100,
                           width: 100,
-                          color: Color.fromARGB(255, 4, 34, 85),
+                          color: const Color.fromARGB(255, 4, 34, 85),
                         ),
                         Container(
                           height: 100,
@@ -590,7 +644,7 @@ class AppTest7 extends StatelessWidget {
                         Container(
                           height: 100,
                           width: 100,
-                          color: Color.fromARGB(255, 4, 34, 85),
+                          color: const Color.fromARGB(255, 4, 34, 85),
                         ),
                         Container(
                           height: 100,
@@ -608,6 +662,8 @@ class AppTest7 extends StatelessWidget {
 
 // hinh 8
 class AppTest8 extends StatelessWidget {
+  const AppTest8({super.key});
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -615,12 +671,18 @@ class AppTest8 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Demo'),
+              title: const Text('Demo'),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             body: Stack(
               children: [
                 Align(
-                    alignment: Alignment(0.45, -0.95),
+                    alignment: const Alignment(0.45, -0.95),
                     child: Container(
                         height: 25,
                         width: 70,
@@ -630,7 +692,7 @@ class AppTest8 extends StatelessWidget {
                           border: Border.all(width: 1, color: Colors.green),
                         ))),
                 Align(
-                  alignment: Alignment(0, -0.4),
+                  alignment: const Alignment(0, -0.4),
                   child: Container(
                     height: 130,
                     width: 200,
@@ -683,12 +745,20 @@ class AppTest8 extends StatelessWidget {
 
 // hinh 9 (Con hinh tam giac)
 class AppTest9 extends StatelessWidget {
+  const AppTest9({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Demo'),
+          title: const Text('Demo'),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
         ),
         body: Center(
           child: Container(
@@ -699,7 +769,7 @@ class AppTest9 extends StatelessWidget {
                 color: Colors.green,
               ),
               child: Padding(
-                padding: EdgeInsets.only(bottom: 40),
+                padding: const EdgeInsets.only(bottom: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -750,4 +820,78 @@ class TriangleClipper extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
+}
+
+// Bai tap dieu huong
+
+class AppTest10 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Bài tập xây dựng giao diện'),
+        ),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  final List<Widget> interfaces = [
+    AppTest(),
+    AppTest2(),
+    AppTest3(),
+    AppTest4(),
+    AppTest5(),
+    AppTest6(),
+    AppTest7(),
+    AppTest8(),
+    AppTest9()
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 16.0,
+        runSpacing: 16.0,
+        // Tao ra mot list cac button dua vao do dai va index
+        children: List.generate(interfaces.length, (index) {
+          // Tao ra su kien khi click vao widget
+          return GestureDetector(
+            onTap: () {
+              // chuyen trang nhung tai sao ko co nut back lai?
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => interfaces[index],
+                ),
+              );
+            },
+            child: Container(
+              alignment: Alignment.center,
+              width: 100.0,
+              height: 60.0,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Text(
+                'Bài tập ${index + 1}',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
 }

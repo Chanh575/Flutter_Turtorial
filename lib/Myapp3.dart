@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class Myapp3 extends StatelessWidget {
+  const Myapp3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,19 +13,20 @@ class Myapp3 extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   MyHomePageState createState() => MyHomePageState();
 }
 
 class MyHomePageState extends State<MyHomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -33,14 +36,14 @@ class MyHomePageState extends State<MyHomePage> {
         child: Center(child: Builder(builder: (BuildContext ctxOfScaffold) {
           return ElevatedButton(
               onPressed: () {
-                this._showMyButtomSheet(ctxOfScaffold);
+                _showMyButtomSheet(ctxOfScaffold);
               },
               child: const Icon(Icons.add));
         })),
       ),
       floatingActionButton: Builder(builder: (BuildContext ctxOfScaffold) {
         return FloatingActionButton(
-          onPressed: () => this._showModalBottomSheet(ctxOfScaffold),
+          onPressed: () => _showModalBottomSheet(ctxOfScaffold),
           child: const Icon(Icons.show_chart_sharp),
         );
       }),
@@ -92,12 +95,64 @@ class MyHomePageState extends State<MyHomePage> {
     showModalBottomSheet(
         context: context,
         builder: (ctx) {
-          return Container(
+          return SizedBox(
             height: MediaQuery.of(context).size.height * 0.4,
             child: const Center(
               child: Text("Welcome to Model!"),
             ),
           );
         });
+  }
+}
+
+//  SingleChildScrollView
+
+class TestApp extends StatelessWidget {
+  const TestApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          child: Column(
+            children: [
+              LogoBox(),
+              LogoBox(),
+              LogoBox(),
+              LogoBox(),
+              LogoBox(),
+              LogoBox(),
+            ],
+          ),
+        ),
+      ),
+    ));
+  }
+}
+
+class LogoBox extends StatelessWidget {
+  const LogoBox({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200,
+      height: 200,
+      margin: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.amber,
+        border: Border.all(width: 1, color: Colors.black26),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      padding: EdgeInsets.all(50),
+      child: FlutterLogo(
+        size: 50,
+      ),
+    );
   }
 }

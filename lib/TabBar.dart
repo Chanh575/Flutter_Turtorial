@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppTabBar extends StatelessWidget {
+  const AppTabBar({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -10,13 +12,13 @@ class AppTabBar extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
   @override
   State<StatefulWidget> createState() {
     return MyHomePageState();
@@ -36,7 +38,7 @@ class MyHomePageState extends State<MyHomePage> {
         child: Scaffold(
           appBar: AppBar(
             bottom: createTabBar(),
-            title: Text('Flutter TabBar Example'),
+            title: const Text('Flutter TabBar Example'),
           ),
           body: const TabBarView(
             children: [
@@ -50,7 +52,7 @@ class MyHomePageState extends State<MyHomePage> {
 
   PreferredSize createTabBar() {
     return PreferredSize(
-      preferredSize: Size.fromHeight(40),
+      preferredSize: const Size.fromHeight(40),
       child: Align(
         alignment: Alignment.centerLeft,
         child: TabBar(
@@ -75,16 +77,16 @@ class MyHomePageState extends State<MyHomePage> {
           onTap: (index) {
             onTapHandler(index);
           },
-          indicatorColor: Color(0xffE74C3C),
+          indicatorColor: const Color(0xffE74C3C),
           // bottom border click
           indicatorWeight: 10,
           // background click
-          indicatorPadding: EdgeInsets.only(right: 20),
+          indicatorPadding: const EdgeInsets.only(right: 20),
 
           labelColor: Colors.red,
           unselectedLabelColor: Colors.white,
 
-          labelPadding: EdgeInsets.all(20),
+          labelPadding: const EdgeInsets.all(20),
 
           // labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           // unselectedLabelStyle:
